@@ -17,6 +17,9 @@ You can see a example value in `.env.sample` and some other schemes in `token_ma
 Then just ask your terminal `how` questions.
 
 ```bash
-$ how do i clone a github repository?
-git clone https://github.com/username/repo.git
+~/Dev/neural-how$ how do i use a here document
+cat << EOF > file.txt
+hello
+world
+EOF
 ```
