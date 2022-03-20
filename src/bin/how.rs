@@ -18,7 +18,7 @@ fn get_token_env() -> Result<String, String> {
 }
 
 fn get_server_env() -> String {
-    std::env::var("HOW_SERVER").unwrap_or("http://localhost:3030/how".into())
+    std::env::var("HOW_SERVER").unwrap_or("https://how.6xr.de/how".into())
 }
 
 async fn main_result() -> Result<String, String> {
@@ -38,9 +38,15 @@ async fn main_result() -> Result<String, String> {
                 .query(&[("question", question.question)])
                 .send()
                 .await
-                .map_err(|e| e.to_string())?
+                .map_err(|e| {
+                    println!("This is erroring {}", e);
+                    e.to_string()
+                })?
                 .error_for_status()
-                .map_err(|e| e.to_string())?
+                .map_err(|e| {
+                    println!("This b is erroring {}", e);
+                    e.to_string()
+                })?
                 .text()
                 .await
                 .map_err(|e| e.to_string())?

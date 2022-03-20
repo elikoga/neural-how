@@ -1,10 +1,9 @@
 use actix_web::{
     error::{ErrorBadRequest, ErrorUnauthorized},
-    get,
     middleware::Logger,
     post,
     web::{self, Data},
-    App, Error, HttpRequest, HttpServer, Responder,
+    App, HttpRequest, HttpServer, Responder,
 };
 use log::info;
 use neural_how::Question;
