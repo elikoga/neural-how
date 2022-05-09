@@ -8,6 +8,8 @@ This is a simple project to help you in your CLI Adventures.
 cargo install --git https://github.com/elikoga/neural-how
 ```
 
+Also rust apparently needs make to install openssl.
+
 ## Usage
 
 Prepare your token by setting the HOW_TOKEN environment variable.

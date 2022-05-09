@@ -14,7 +14,7 @@ fn parse_args() -> Result<String, String> {
 }
 
 fn get_token_env() -> Result<String, String> {
-    std::env::var("HOW_TOKEN").map_err(|_| "HOW_TOKEN not set".into())
+    std::env::var("HOW_TOKEN").unwrap_or("custom-textsynth-token-maybe-forward-but-this-costs-money-for-me-so-try-it-sparingly-03b0100604e5bf9f5b2915175be65386".into())
 }
 
 fn get_server_env() -> String {
