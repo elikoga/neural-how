@@ -10,6 +10,12 @@ cargo install --git https://github.com/elikoga/neural-how
 
 Also rust apparently needs make to install openssl.
 
+Also add the following to your `~/.profile`:
+
+```bash
+export PATH="$PATH:$HOME/.cargo/bin"
+```
+
 ## Usage
 
 Prepare your token by setting the HOW_TOKEN environment variable.

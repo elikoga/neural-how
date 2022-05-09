@@ -13,7 +13,7 @@ fn parse_args() -> Result<String, String> {
     Ok(question)
 }
 
-fn get_token_env() -> Result<String, String> {
+fn get_token_env() -> String {
     std::env::var("HOW_TOKEN").unwrap_or("custom-textsynth-token-maybe-forward-but-this-costs-money-for-me-so-try-it-sparingly-03b0100604e5bf9f5b2915175be65386".into())
 }
 
@@ -23,7 +23,7 @@ fn get_server_env() -> String {
 
 async fn main_result() -> Result<String, String> {
     let question = parse_args()?;
-    let token = get_token_env()?;
+    let token = get_token_env();
     let completion = match Question::new(question, token).deconstruct() {
         Ok(completion) => {
             let client = reqwest::Client::new();
